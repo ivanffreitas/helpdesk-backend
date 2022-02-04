@@ -33,6 +33,7 @@ public class Chamado implements Serializable{
 	private Status status;
 	private String titulo;
 	private String observacoes;
+	private String setor;
 	
 	@ManyToOne
 	@JoinColumn(name = "tecnico_id")
@@ -46,7 +47,7 @@ public class Chamado implements Serializable{
 		super();
 	}
 
-	public Chamado(Integer id, Prioridade prioridade, Status status, String titulo, String observacoes, Tecnico tecnico,
+	public Chamado(Integer id, Prioridade prioridade, Status status, String titulo, String observacoes, String setor, Tecnico tecnico,
 			Cliente cliente) {
 		super();
 		this.id = id;
@@ -54,6 +55,7 @@ public class Chamado implements Serializable{
 		this.status = status;
 		this.titulo = titulo;
 		this.observacoes = observacoes;
+		this.setor = setor;
 		this.tecnico = tecnico;
 		this.cliente = cliente;
 	}
@@ -112,6 +114,14 @@ public class Chamado implements Serializable{
 
 	public void setObservacoes(String observacoes) {
 		this.observacoes = observacoes;
+	}
+
+	public String getSetor() {
+		return setor;
+	}
+
+	public void setSetor(String setor) {
+		this.setor = setor;
 	}
 
 	public Tecnico getTecnico() {
